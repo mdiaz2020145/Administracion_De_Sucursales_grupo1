@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const Empresa=require('../models/empresas.model')
 const underscore=require('underscore');
 const bcrypt=require('bcrypt-nodejs');
@@ -24,10 +23,6 @@ function registrar(req, res){
     });
     console.log(registrar);
 }
-=======
-const Empresa = require('../models/empresas.model');
-const bcrypt = require('bcrypt-nodejs');
->>>>>>> ChristianBlanco
 
 function AgregarEmpresa (req, res){
     var parametros = req.body;
