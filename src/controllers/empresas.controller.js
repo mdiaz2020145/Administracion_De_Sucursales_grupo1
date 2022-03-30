@@ -6,7 +6,7 @@ const jwt=require('jwt-simple')
 function registrar(req, res){
     var parametros=req.body;
     var empresaModel=new Empresa;
-    Usuario.findOne({usuario: parametros.usuario}, (err, empresaEncontrada)=>{
+    Empresa.findOne({usuario: parametros.usuario}, (err, empresaEncontrada)=>{
         if(underscore.isEmpty(empresaEncontrada)){
             empresaModel.usuario=parametros.usuario;
             empresaModel.nombreEmpresa=parametros.nombre;
@@ -17,9 +17,11 @@ function registrar(req, res){
                 empresaModel.save(()=>{});
             })
         }else{
-            return res.status(500).send({mensaje: "El nombre de usuario ya esta en uso, utilice uno diferente"})
+            return res.status(500).send({mensaje: "El nombre de usuario ya esta en uso, utilice uno diferente"});
         }
-    })
+        
+    });
+    console.log(registrar);
 }
 
 
